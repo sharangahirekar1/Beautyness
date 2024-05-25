@@ -4,9 +4,15 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 import { Home, About, Services, Contact, Blog, Reservation } from "./pages";
 import RootLayout from "./components/RootLayout";
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +28,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  ) 
 };
 
 export default App;
