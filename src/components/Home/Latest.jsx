@@ -12,16 +12,20 @@ const Latest = () => (
         <div
           key={story.id}
           className="flex flex-wrap flex-col items-start justify-center bg-[#EBF3F5] p-4 rounded-md"
+          itemScope
+          itemType="https://schema.org/Blog"
+
         >
           <img
             src={story.icon}
             alt={story.id}
             className="w-[370px] h-[341px] object-cover rounded-[4px]"
+            itemProp="image"
           />
-          <p className="text-[#555] font-manrope text-[15px] font-normal leading-[165%] max-w-[327px] mt-6 uppercase">
+          <p className="text-[#555] font-manrope text-[15px] font-normal leading-[165%] max-w-[327px] mt-6 uppercase" itemProp="description">
             {story.caption}
           </p>
-          <h4 className="text-[#141414] font-playfair sm:text-[22px] text-[24px] tracking-wide font-semibold leading-[120%] mt-2 max-w-[370px]">
+          <h4 className="text-[#141414] font-playfair sm:text-[22px] text-[24px] tracking-wide font-semibold leading-[120%] mt-2 max-w-[370px]" itemProp="headline">
             {story.title}
           </h4>
           <p className={`${styles.paragraph}`}>{story.desc}</p>

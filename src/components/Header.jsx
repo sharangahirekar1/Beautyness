@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Menu } from "./Menu";
 const Header = () => {
   return (
-    <nav className="w-full flex py-4 justify-between items-center navbar sm:px-16 ss:px-8 px-2">
+    <nav role='banner' className="w-full flex py-4 justify-between items-center navbar sm:px-16 ss:px-8 px-2">
       <div className="flex md:px-8 sm:px-4 px-2">
         <NavLink to="/" className="flex sm:px-16 md:px-8 px-2">
           <img
